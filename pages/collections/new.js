@@ -1,6 +1,6 @@
-// import React from 'react';
-// // import CollectionForm
+import React from 'react';
+import CollectionForm from '../../components/forms/collectionForm';
 
-// export default function AddACollection() {
-//   return <CollectionForm />;
-// }
+export default function AddACollection() {
+  return <CollectionForm />;
+}

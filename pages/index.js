@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { Button, Form } from 'bootstrap';
+import { Button, Form } from 'react-bootstrap';
 import { getCollections } from '../api/collectionData';
 import { useAuth } from '../utils/context/authContext';
 import CollectionCard from '../components/cards/collectionCard';
@@ -39,7 +39,7 @@ function Home() {
       </Form.Group>
       <div className="d-flex flex-wrap">
         {/* TODO: map over collections here using collectionCard component */}
-        {showingCollections.map((collection) => (
+        {showingCollections?.map((collection) => (
           <CollectionCard key={collection.firebaseKey} collectionObj={collection} onUpdate={getAllTheCollections} />
         ))}
       </div>
