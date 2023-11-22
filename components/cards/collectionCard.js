@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'bootstrap';
-import { Card } from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap';
 import Link from 'next/link';
 import { deleteCollection } from '../../api/collectionData';
 
@@ -18,6 +17,9 @@ function CollectionCard({ collectionObj, onUpdate }) {
       <Card.Body>
         <Card.Title>{collectionObj.name}</Card.Title>
         <Card.Text>{collectionObj.description}</Card.Text>
+        <Link href={`/collections/${collectionObj.firebaseKey}`} passHref>
+          <Button variant="primary" className="m-2">View Collection</Button>
+        </Link>
         <Link href={`/collections/edit/${collectionObj.firebaseKey}`} passHref>
           <Button variant="info">Edit the Collection</Button>
         </Link>

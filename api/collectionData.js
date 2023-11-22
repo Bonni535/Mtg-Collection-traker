@@ -3,7 +3,7 @@ import { clientCredentials } from '../utils/client';
 const endpoint = clientCredentials.databaseURL;
 
 const getCollections = (uid) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/collections.json?orderBy="uid"&equalTo="${uid}"`, {
+  fetch(`${endpoint}/collection.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -15,7 +15,7 @@ const getCollections = (uid) => new Promise((resolve, reject) => {
 });
 
 const deleteCollection = (firebaseKey) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/collections/${firebaseKey}.json`, {
+  fetch(`${endpoint}/collection/${firebaseKey}.json`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
@@ -27,7 +27,7 @@ const deleteCollection = (firebaseKey) => new Promise((resolve, reject) => {
 });
 
 const getSingleCollection = (firebaseKey) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/collections/${firebaseKey}.json`, {
+  fetch(`${endpoint}/collection/${firebaseKey}.json`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -39,7 +39,7 @@ const getSingleCollection = (firebaseKey) => new Promise((resolve, reject) => {
 });
 
 const createCollection = (payload) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/collections.json`, {
+  fetch(`${endpoint}/collection.json`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -52,7 +52,7 @@ const createCollection = (payload) => new Promise((resolve, reject) => {
 });
 
 const updateCollection = (payload) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/collections/${payload.firebaseKey}.json`, {
+  fetch(`${endpoint}/collection/${payload.firebaseKey}.json`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
